@@ -6,7 +6,7 @@
 
     <div class="col-lg-10 ms-7">
       <h1><u>Perpus digital</u></h1>
-      <address>SMKN 4 Tasikmalaya <br>JL.Depok, Sukamenak, Purbaratu</address>
+      <address>SMKN 4 Tasikmalaya <br />JL.Depok, Sukamenak, Purbaratu</address>
     </div>
   </div>
 </template>

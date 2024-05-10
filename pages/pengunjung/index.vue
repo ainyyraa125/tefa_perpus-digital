@@ -4,31 +4,52 @@
       <div class="col-lg-12">
         <h2 class="text-center my-4">RIWAYAT KUNJUNGAN</h2>
         <div class="my-3">
-          <input type="search" class="form-control form-control-lg rounded-5" placeholder="filter..." />
+          <form @submit.prevent="getpengunjung">
+            <input v-model="keyword" type="search" class="form-control form-control-lg rounded-5" placeholder="Filter..." />
+          </form>
         </div>
-        <div class="my-3 text-muted">menampilkan 1 dari 1</div>
+        <div class="my-3 text-muted">Menampilkan 1 dari 1</div>
         <table class="table">
           <thead>
-            <tr>
-              <td>#</td>
-              <td>NAMA</td>
-              <td>KATEGORI</td>
-              <td>WAKTU</td>
-              <td>KEPERLUAN</td>
+            <tr align="center">
+              <th>#</th>
+              <th>NAMA</th>
+              <th>KEANGGOTAAN</th>
+              <th>TINGKAT</th>
+              <th>JURUSAN</th>
+              <th>KELAS</th>
+              <th>KEPERLUAN</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1.</td>
-              <td>Ainy</td>
-              <td>Siswa</td>
-              <td>26 Februari 2024</td>
-              <td>Baca</td>
+            <tr v-for="(visitor, i) in visitors" :key="i">
+              <td>{{ i + 1 }}.</td>
+              <td>{{ visitor.nama }}</td>
+              <td>{{ visitor.keanggotaan.nama }}</td>
+              <td>{{ visitor.tingkat }}</td>
+              <td>{{ visitor.jurusan }}</td>
+              <td>{{ visitor.kelas }}</td>
+              <td>{{ visitor.keperluan.nama }}</td>
             </tr>
           </tbody>
         </table>
       </div>
-      <nuxt-link to="../"><button type="submit" class="btn btn-lg rounded-5 px-5 bg-primary text-white" style="float: right">KEMBALI</button></nuxt-link>
     </div>
+    <NuxtLink to="/pengunjung/tambah"><button type="submit" class="btn btn-lg btn-dark rounded-5 px-5 bg-secondary text-white" style="float: right; margin-bottom: 15px">KEMBALI</button></NuxtLink>
   </div>
 </template>
+
+<script setup>
+const supabase = useSupabaseClient();
+
+const visitors = ref([]);
+
+const getPengunjung = async () => {
+  const { data, error } = await supabase.from("Pengunjung").select(`*, keanggotaan(*), keperluan(*)`);
+  if (data) visitors.value = data;
+};
+
+onMounted(() => {
+  getPengunjung();
+});
+</script>
