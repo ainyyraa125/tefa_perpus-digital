@@ -12,27 +12,9 @@
         <div class="row">
           <div v-for="(book, i) in books" :key="i" class="col-lg-2">
             <div class="card mb-3">
-              <nuxt-link to="/buku/des3">
+              <nuxt-link :to="`/buku/${book.id}`">
                 <div class="card-body">
-                  <img src="~/assets/img/ba.jpg" class="cover" alt="cover 1" />
-                </div>
-              </nuxt-link>
-            </div>
-          </div>
-          <div class="col-lg-2">
-            <div class="card mb-3">
-              <nuxt-link to="/buku/des1">
-                <div class="card-body">
-                  <img src="~/assets/img/rentang waktu.jpg" class="cover" alt="cover 2" />
-                </div>
-              </nuxt-link>
-            </div>
-          </div>
-          <div class="col-lg-2">
-            <div class="card mb-3">
-              <nuxt-link to="/buku/des2">
-                <div class="card-body">
-                  <img src="~/assets/img/sobat sakit.jpg" class="cover" alt="cover 3" />
+                  <img :src="book.cover" class="cover" :alt="book.judul" />
                 </div>
               </nuxt-link>
             </div>
@@ -51,7 +33,7 @@ const supabase = useSupabaseClient();
 const books = ref([]);
 
 const getbooks = async () => {
-  const { data, error } = await supabase.from("buku").select(", kategori()").ilike("judul", "%${keyword.value}%");
+  const { data, error } = await supabase.from("buku").select(`*,kategori(*)`).ilike("judul", `%${keyword.value}%`);
   if (data) books.value = data;
 };
 onMounted(() => {

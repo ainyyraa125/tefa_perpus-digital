@@ -14,7 +14,7 @@
             </select>
           </div>
 
-          <div class="mb-3" v-if="form.keanggotaan == '1'">
+          <div class="mb-3" v-if="form.keanggotaan == 1">
             <div class="row">
               <div class="col-md-4">
                 <select v-model="form.tingkat" class="form-control form-control-lg form-select rounded-4 mb-2">
@@ -27,11 +27,11 @@
               <div class="col-md-4">
                 <select v-model="form.jurusan" class="form-control form-control-lg form-select rounded-4 mb-2">
                   <option value="">JURUSAN</option>
-                  <option value="">PPLG</option>
-                  <option value="">TJKT</option>
-                  <option value="">TSM</option>
-                  <option value="">DKV</option>
-                  <option value="">TOI</option>
+                  <option value="PPLG">PPLG</option>
+                  <option value="TJKT">TJKT</option>
+                  <option value="TSM">TSM</option>
+                  <option value="DKV">DKV</option>
+                  <option value="TOI">TOI</option>
                 </select>
               </div>
               <div class="col-md-4">
@@ -48,10 +48,7 @@
           <div class="col-mb-3">
             <select v-model="form.keperluan" class="form-control form-control-lg form-select rounded-4 mb-3">
               <option value="">KEPERLUAN</option>
-              <option value="baca buku">baca buku</option>
-              <option value="pinjam buku">pinjam buku</option>
-              <option value="kembalikan buku">kembalikan buku</option>
-              <option v-for="(item, i) in objectives" :key="i" :value="item.id">{{ item.nama }}</option>
+              <option v-for="(item, i) in objetivies" :key="i" :value="item.id">{{ item.nama }}</option>
             </select>
           </div>
           <button type="submit" class="btn btn-lg bg-warning rounded-5 px-5">Kirim</button>
@@ -79,7 +76,7 @@ const form = ref({
 });
 
 const kirimData = async () => {
-  // console.log(form.value);
+  console.log(form.value);
   const { error } = await supabase.from("pengunjung").insert([form.value]);
   if (!error) navigateTo("/pengunjung");
 };

@@ -11,7 +11,7 @@
         <div class="my-3 text-muted">Menampilkan 1 dari 1</div>
         <table class="table">
           <thead>
-            <tr align="center">
+            <tr class="text-center">
               <th>#</th>
               <th>NAMA</th>
               <th>KEANGGOTAAN</th>
@@ -43,9 +43,10 @@
 const supabase = useSupabaseClient();
 
 const visitors = ref([]);
+const keyword = ref("");
 
 const getPengunjung = async () => {
-  const { data, error } = await supabase.from("Pengunjung").select(`*, keanggotaan(*), keperluan(*)`);
+  const { data, error } = await supabase.from("pengunjung").select(`*, keanggotaan(*), keperluan(*)`);
   if (data) visitors.value = data;
 };
 
