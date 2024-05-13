@@ -5,10 +5,10 @@
         <h2 class="text-center my-4">RIWAYAT KUNJUNGAN</h2>
         <div class="my-3">
           <form @submit.prevent="getpengunjung">
-            <input v-model="keyword" type="search" class="form-control form-control-lg rounded-5" placeholder="Filter..." />
+            <input v-model="keyword" type="search" class="form-control rounded-5" placeholder="Filter" />
           </form>
         </div>
-        <div class="my-3 text-muted">Menampilkan 1 dari 1</div>
+        <div class="my-3 text-muted">menampilkan {{ visitors.length }} dari {{ visitors.length }}</div>
         <table class="table">
           <thead>
             <tr class="text-center">
@@ -44,13 +44,20 @@ const supabase = useSupabaseClient();
 
 const visitors = ref([]);
 const keyword = ref("");
+const jumlah = ref(0);
 
-const getPengunjung = async () => {
-  const { data, error } = await supabase.from("pengunjung").select(`*, keanggotaan(*), keperluan(*)`);
+const getpengunjung = async () => {
+  const { data, error } = await supabase.from("pengunjung").select(`*, keanggotaan(*), keperluan(*)`).ilike("nama", `%${keyword.value}%`).order(`id`, { ascending: false });
   if (data) visitors.value = data;
 };
 
+const totalpengunjung = async () => {
+  const { data, count } = await supabase.from("pengunjung").select("*", { count: "exact" });
+  if (data) jumlah.value = count;
+};
+
 onMounted(() => {
-  getPengunjung();
+  getpengunjung();
+  totalpengunjung();
 });
 </script>

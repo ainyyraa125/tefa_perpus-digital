@@ -14,7 +14,7 @@
             </select>
           </div>
 
-          <div class="mb-3" v-if="form.keanggotaan == 1">
+          <div class="mb-3" v-if="form.keanggotaan == '1'">
             <div class="row">
               <div class="col-md-4">
                 <select v-model="form.tingkat" class="form-control form-control-lg form-select rounded-4 mb-2">

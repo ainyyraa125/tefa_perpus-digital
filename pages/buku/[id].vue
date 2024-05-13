@@ -9,11 +9,11 @@
         <li class="list group list-group">penulis : {{ buku.penulis }}</li>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">Penulis: {{ buku.penulis }}</li>
-          <li class="list-group-item">Tahun Terbit: {{ buku.tahunterbit }}</li>
-          <li class="list-group-item">rak: {{ buku.rak }}</li>
+          <li class="list-group-item">Tahun Terbit: {{ buku.tahun_terbit }}</li>
           <li class="list-group-item">deskripsi : {{ buku.deskripsi }}</li>
         </ul>
       </div>
+      <nuxt-link to="../buku"><button type="submit" class="btn btn-lg btn-dark rounded-5 px-5 bg-primary text-white" style="float: right; margin-bottom: 15px">KEMBALI</button></nuxt-link>
     </div>
   </div>
 </template>
