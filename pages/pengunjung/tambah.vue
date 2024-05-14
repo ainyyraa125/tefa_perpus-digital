@@ -60,6 +60,7 @@
 </template>
 
 <script setup>
+useHead({ title: "isi buku kunjungan perpus" });
 const supabase = useSupabaseClient();
 
 const members = ref([]);

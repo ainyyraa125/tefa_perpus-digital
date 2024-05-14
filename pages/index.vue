@@ -61,6 +61,7 @@
 </template>
 
 <script setup>
+useHead({ title: "perpus digital ainy" });
 const supabase = useSupabaseClient();
 const jumlahp = ref(0);
 const jumlahb = ref(0);

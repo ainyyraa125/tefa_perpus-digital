@@ -27,6 +27,7 @@
 </template>
 
 <script setup>
+useHead({ title: "buku" });
 const keyword = ref("");
 const supabase = useSupabaseClient();
 

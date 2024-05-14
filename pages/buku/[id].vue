@@ -22,6 +22,7 @@
 const supabase = useSupabaseClient();
 const route = useRoute();
 const buku = ref([]);
+useHead({ title: "detail buku" });
 
 const getBukuByld = async () => {
   const { data, error } = await supabase.from("buku").select(`*, kategori(*)`).eq("id", route.params.id).single();

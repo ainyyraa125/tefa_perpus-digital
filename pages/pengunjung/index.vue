@@ -40,6 +40,7 @@
 </template>
 
 <script setup>
+useHead({ title: "pengunjung perpus" });
 const supabase = useSupabaseClient();
 
 const visitors = ref([]);
