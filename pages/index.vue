@@ -112,7 +112,7 @@ onMounted(() => {
 .card.bg-pengunjung1 {
   margin-right: 10%;
   margin-left: 10%;
-  margin-top: 0%;
+  margin-top: 3%;
   background-color: #ece183;
   background-position: center center;
   background-repeat: no-repeat;
@@ -122,7 +122,7 @@ onMounted(() => {
 .card.bg-buku2 {
   margin-right: 10%;
   margin-left: 10%;
-  margin-top: 0%;
+  margin-top: 3%;
   background-color: #77f6aa;
   background-position: center center;
   background-repeat: no-repeat;
