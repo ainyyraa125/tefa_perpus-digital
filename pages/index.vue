@@ -22,11 +22,10 @@
       </div>
     </div>
 
-    <div class="statistik">
-      <h2 class="stat" style="font-family: margin-left 150px">STATISTIK</h2>
+    <div class="mt-5" style="margin-left: 100px">
+      <h2 class="">STATISTIK</h2>
     </div>
-
-    <div class="row my-5 justify-content-around">
+    <div class="row my-5 md-5 justify-content-around">
       <div class="col-lg-6">
         <div class="card bg-pengunjung1 rounded-5">
           <div class="card-body">
