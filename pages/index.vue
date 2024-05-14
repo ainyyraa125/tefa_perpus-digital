@@ -22,7 +22,7 @@
       </div>
     </div>
 
-    <div class="mt-5" style="margin-left: 100px">
+    <div class="mt-5" style="margin-left: 150px">
       <h2 class="">STATISTIK</h2>
     </div>
     <div class="row my-5 justify-content-around">
@@ -87,8 +87,8 @@ onMounted(() => {
   box-shadow: 1px 1px 10px;
 }
 .card.bg-pengunjung {
-  margin-right: 10%;
-  margin-left: 10%;
+  margin-right: 13%;
+  margin-left: 13%;
   background-image: url("../assets/img/bg-home-kunjungan.jpeg");
   background-repeat: no-repeat;
   background-position: center center;
@@ -98,8 +98,8 @@ onMounted(() => {
 }
 
 .card.bg-buku {
-  margin-right: 10%;
-  margin-left: 10%;
+  margin-right: 13%;
+  margin-left: 13%;
   background: url("../assets/img/bg-home-cari-buku.jpg") no-repeat center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -110,9 +110,9 @@ onMounted(() => {
 }
 
 .card.bg-pengunjung1 {
-  margin-right: 10%;
-  margin-left: 10%;
-  margin-top: 3%;
+  margin-right: 13%;
+  margin-left: 13%;
+  margin-top: 2%;
   background-color: #ece183;
   background-position: center center;
   background-repeat: no-repeat;
@@ -120,9 +120,9 @@ onMounted(() => {
   opacity: 70%;
 }
 .card.bg-buku2 {
-  margin-right: 10%;
-  margin-left: 10%;
-  margin-top: 3%;
+  margin-right: 13%;
+  margin-left: 13%;
+  margin-top: 2%;
   background-color: #77f6aa;
   background-position: center center;
   background-repeat: no-repeat;
