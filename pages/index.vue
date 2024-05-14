@@ -90,7 +90,7 @@ onMounted(() => {
 .card.bg-pengunjung {
   margin-right: 13%;
   margin-left: 13%;
-  background-image: url("../assets/img/bg-home-kunjungan.jpeg");
+  background-image: url("../assets/img/bg-home-kunjungan.webp");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -101,7 +101,7 @@ onMounted(() => {
 .card.bg-buku {
   margin-right: 13%;
   margin-left: 13%;
-  background: url("../assets/img/bg-home-cari-buku.jpg") no-repeat center center;
+  background: url("../assets/img/bg-home-cari-buku.webp") no-repeat center center;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
