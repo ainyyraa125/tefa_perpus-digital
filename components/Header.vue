@@ -5,7 +5,7 @@
     </div>
 
     <div class="col-lg-10 ms-7">
-      <h1><u>Perpus digital</u></h1>
+      <h1 style="font-size: 25px; margin-top: 20px">Perpus Digital</h1>
       <address>SMKN 4 Tasikmalaya <br />JL.Depok, Sukamenak, Purbaratu</address>
     </div>
   </div>
@@ -13,6 +13,14 @@
 
 <style scoped>
 .img {
-  width: 90px;
+  width: 100px;
+  height: 100px;
+}
+.h1 {
+  margin-top: 10px;
+  margin-left: 5px;
+}
+.address {
+  margin-left: 5px;
 }
 </style>
