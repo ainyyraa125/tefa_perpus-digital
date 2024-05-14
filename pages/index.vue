@@ -25,7 +25,7 @@
     <div class="mt-5" style="margin-left: 100px">
       <h2 class="">STATISTIK</h2>
     </div>
-    <div class="row my-5 md-5 justify-content-around">
+    <div class="row my-5 justify-content-around">
       <div class="col-lg-6">
         <div class="card bg-pengunjung1 rounded-5">
           <div class="card-body">
@@ -82,9 +82,6 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.stat {
-  margin-bottom: -100px;
-}
 .card {
   height: 250px;
   box-shadow: 1px 1px 10px;
@@ -115,7 +112,7 @@ onMounted(() => {
 .card.bg-pengunjung1 {
   margin-right: 10%;
   margin-left: 10%;
-  margin-top: 10%;
+  margin-top: 3%;
   background-color: #ece183;
   background-position: center center;
   background-repeat: no-repeat;
@@ -125,7 +122,7 @@ onMounted(() => {
 .card.bg-buku2 {
   margin-right: 10%;
   margin-left: 10%;
-  margin-top: 10%;
+  margin-top: 3%;
   background-color: #77f6aa;
   background-position: center center;
   background-repeat: no-repeat;
