@@ -23,7 +23,7 @@
     </div>
 
     <div class="statistik">
-      <h2 class="stat" style="font-family: margin-left 100px">STATISTIK</h2>
+      <h2 class="stat" style="font-family: margin-left 150px">STATISTIK</h2>
     </div>
 
     <div class="row my-5 justify-content-around">
