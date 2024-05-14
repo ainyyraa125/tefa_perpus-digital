@@ -27,7 +27,7 @@
 </template>
 
 <script setup>
-useHead({ title: "buku" });
+useHead({ title: "buku", meta: [{ name: "description", content: "semua buku di perpustakaan smk 4" }] });
 const keyword = ref("");
 const supabase = useSupabaseClient();
 
