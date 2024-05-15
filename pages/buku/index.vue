@@ -45,7 +45,7 @@ onMounted(() => {
 <style scoped>
 .card-body {
   width: 100%;
-  height: 30em;
+  height: 40em;
   padding: 0;
 }
 

@@ -49,7 +49,7 @@
                 <div class="col p-5">
                   <h1 style="font-size: 80px; margin-right: 200px">{{ jumlahb }}</h1>
                 </div>
-                <div class="col mt-5 p-5"><h2 style="font-family: margin-left -20px">Buku</h2></div>
+                <div class="col mt-5 p-5"><h2 style="font-family: margin-left 20px">Buku</h2></div>
               </div>
             </nuxt-link>
           </div>
