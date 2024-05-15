@@ -1,7 +1,7 @@
 <template>
   <div class="row p-3 bg-primary text-white">
     <div class="col-lg-1">
-      <img src="~/assets/img/LOGO-SMK4.webp" alt="logo SMKN 4" />
+      <img src="~/assets/img/LOGO-SMK4.png" alt="logo SMKN 4" />
     </div>
 
     <div class="col-lg-10 ms-7">
@@ -12,9 +12,9 @@
 </template>
 
 <style scoped>
-.img {
-  width: 100px;
-  height: 100px;
+img {
+  width: 150px;
+  height: 150px;
 }
 .h1 {
   margin-top: 10px;
