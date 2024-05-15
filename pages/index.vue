@@ -32,7 +32,7 @@
             <nuxt-link to="/pengunjung">
               <div class="row">
                 <div class="col p-5">
-                  <h1 style="font-size: 80px">{{ jumlahp }}</h1>
+                  <div class="col p-3" style="font-size: 80px">{{ jumlahp }}</div>
                 </div>
                 <div class="col mt-5 p-5"><h2 style="font-family: margin-left -20px">Pengunjung</h2></div>
               </div>
