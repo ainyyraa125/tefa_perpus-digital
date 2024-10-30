@@ -1,26 +1,59 @@
 <template>
-  <div class="row p-3 bg-primary text-white">
-    <div class="col-lg-1">
-      <img src="~/assets/img/LOGO-SMK4.png" alt="logo SMKN 4" />
-    </div>
+  <div class="row p-3 bg-primary text-white align-items-center">
+      <div class="col-12 col-lg-1 text-center text-lg-start mb-3 mb-lg-0">
+          <img src="~/assets/img/LOGO-SMK4 (2).png" alt="Logo SMK Negeri 4 Tasikmalaya" />
+      </div>
 
-    <div class="col-lg-10 ms-7">
-      <h1 style="font-size: 25px; margin-top: 20px">Perpus Digital</h1>
-      <address>SMKN 4 Tasikmalaya <br />JL.Depok, Sukamenak, Purbaratu</address>
-    </div>
+      <div class="col-12 col-lg-10 text-center text-lg-start">
+          <h1>PRESENSI SISWA</h1>
+          <h2>XII PPLG 2</h2>
+          <h3>SMK Negeri 4 Tasikmalaya</h3>
+      </div>
+
+      <div class="col-12 col-lg-1 text-center text-lg-end mt-3 mt-lg-0">
+          <img src="~/assets/img/logo-jurusan.png" alt="Logo Jurusan" />
+      </div>
   </div>
 </template>
 
+
 <style scoped>
+/* Image styling */
 img {
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  max-width: 150px;
+  height: auto;
 }
-.h1 {
-  margin-top: 10px;
-  margin-left: 5px;
+
+/* Text styling */
+h1, h2, h3 {
+  margin: 0;
 }
-.address {
-  margin-left: 5px;
+
+h1 {
+  font-size: 1.8rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+/* Responsive text sizes */
+@media (min-width: 768px) {
+  h1 {
+      font-size: 2.5rem;
+  }
+
+  h2 {
+      font-size: 2rem;
+  }
+
+  h3 {
+      font-size: 1.5rem;
+  }
 }
 </style>

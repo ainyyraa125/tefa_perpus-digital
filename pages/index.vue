@@ -1,133 +1,94 @@
 <template>
-  <div class="container-fluid">
-    <div class="row my-5">
-      <div class="col-lg-6">
-        <nuxt-link to="../pengunjung/tambah">
-          <div class="card bg-pengunjung rounded-5">
-            <div class="card-body">
-              <h2>pengunjung</h2>
-            </div>
-          </div>
-        </nuxt-link>
-      </div>
-
-      <div class="col-lg-6">
-        <nuxt-link to="../buku">
-          <div class="card bg-buku rounded-5">
-            <div class="card-body">
-              <h2>Cari Buku</h2>
-            </div>
-          </div>
-        </nuxt-link>
-      </div>
-    </div>
-
-    <div class="mt-5" style="margin-left: 150px">
-      <h2 class="">STATISTIK</h2>
-    </div>
-    <div class="row my-5 justify-content-around">
-      <div class="col-lg-6">
-        <div class="card bg-pengunjung1 rounded-5">
-          <div class="card-body">
-            <nuxt-link to="/pengunjung">
-              <div class="row">
-                <div class="col p-5">
-                  <div class="col p-3" style="font-size: 80px">{{ jumlahp }}</div>
-                </div>
-                <div class="col mt-5 p-5"><h2 style="font-family: margin-left -20px">Pengunjung</h2></div>
+    <div class="container-fluid">
+      <div class=" row my-5">
+          <nuxt-link to="/logout">
+            <button type="submit"
+                class="btn btn-lg btn-danger radius kembali">
+                Logout
+              </button>
+          </nuxt-link>
+        
+        <div class="col-lg-4">
+          <nuxt-link to="/pengunjung/tambah">
+            <div class="card bg-MASUK rounded-5">
+              <div class="card-body">
+                <h2>ABSEN MASUK</h2>
               </div>
-            </nuxt-link>
-          </div>
+            </div>
+          </nuxt-link>
         </div>
-      </div>
-
-      <div class="col-lg-6">
-        <div class="card bg-buku2 rounded-5">
-          <div class="card-body">
-            <nuxt-link to="./buku">
-              <div class="row">
-                <div class="col p-5">
-                  <h1 style="font-size: 80px; margin-right: 200px">{{ jumlahb }}</h1>
-                </div>
-                <div class="col mt-5 p-5"><h2 style="font-family: margin-left 20px">Buku</h2></div>
+        <div class="col-lg-4  ">
+          <nuxt-link to="/pengunjung/tambah">
+            <div class="card bg-KELUAR  rounded-5">
+              <div class="card-body">
+                <h2>ABSEN KELUAR</h2>
               </div>
-            </nuxt-link>
-          </div>
-        </div>
+            </div>
+          </nuxt-link>
+      </div>
+      <div class="rekap col-lg-4 ">
+          <nuxt-link to="/pengunjung/rekapan">
+            <div class="card bg-Rekapan rounded-5">
+              <div class="card-body">
+                <h2>REKAPAN</h2>
+              </div>
+            </div>
+          </nuxt-link>
       </div>
     </div>
-    <Chart />
   </div>
-</template>
+  </template>
 
 <script setup>
-useHead({ title: "perpus digital ainy", meta: [{ name: "description", content: "aplikasi kunjungan dan pencarian buku perpus SMKN 4 TASIKMALAYA" }] });
-const supabase = useSupabaseClient();
-const jumlahp = ref(0);
-const jumlahb = ref(0);
-
-async function ambiljumlahp() {
-  const { data, error, count } = await supabase.from("pengunjung").select("*", { count: "exact" });
-  if (count) jumlahp.value = count;
-}
-
-async function ambiljumlahb() {
-  const { data, error, count } = await supabase.from("buku").select("*", { count: "exact" });
-  if (count) jumlahb.value = count;
-}
-
-onMounted(() => {
-  ambiljumlahp();
-  ambiljumlahb();
-});
+useHead({ title: "PRESENSI", meta: [{ name: "description", content: "aplikasi PRESENSI SISWA SMKN 4 TASIKMALAYA" }] });
 </script>
+  
+  <style scoped>
+  * {
+    text-decoration: none;
+  }
+  .card {
+    height: 250px;
+    box-shadow: 1px 1px 10px #424242;
+  }
+  .card.bg-MASUK {
+    margin-top: 5%;
+    background-image: url("../assets/img/absen.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    
+  }
+  .card.bg-KELUAR {
+    margin-top: 5%;
+    background: url("../assets/img/keluar.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    
+  }
+  .card.bg-Rekapan {
+    margin-top: 5%;
+    /* margin-left: 80%; */
+    background: url("../assets/img/Rekapan.jpeg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    
+  }
 
-<style scoped>
-.card {
-  height: 250px;
-  box-shadow: 1px 1px 10px;
-}
-.card.bg-pengunjung {
-  margin-right: 13%;
-  margin-left: 13%;
-  background-image: url("../assets/img/bg-home-kunjungan.webp");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  color: black;
-  opacity: 70%;
-}
+  h2 {
+    color:rgb(34, 115, 207);
+    font: arial;
+  }
+  h1 {
+    color: white;
+  }
+  .card.bg-warning {
+    margin-top: 3%;
+  }
+  .card.bg-success {
+    margin-top: 3%;
+  }
 
-.card.bg-buku {
-  margin-right: 13%;
-  margin-left: 13%;
-  background: url("../assets/img/bg-home-cari-buku.webp") no-repeat center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  color: black;
-  opacity: 70%;
-}
-
-.card.bg-pengunjung1 {
-  margin-right: 13%;
-  margin-left: 13%;
-  margin-top: 2%;
-  background-color: #ece183;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  opacity: 70%;
-}
-.card.bg-buku2 {
-  margin-right: 13%;
-  margin-left: 13%;
-  margin-top: 2%;
-  background-color: #77f6aa;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  opacity: 70%;
-}
-</style>
+  </style>
